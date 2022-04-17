@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TeshaCoffeeShop.BL.CoffeeShop">
+    <Position X="9.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAQAAACAAAAAAAAAAAAEAAAAAEEAACAgACIAAAgEAA=</HashCode>
+      <FileName>BL\CoffeeShop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeshaCoffeeShop.BL.MenuItem">
+    <Position X="11.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BL\MenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeshaCoffeeShop.UI.CoffeeShopUI">
+    <Position X="5.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgBAAAAAAEAAAAAAADAAgIAAAEBAAAA=</HashCode>
+      <FileName>UI\CoffeeShopUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeshaCoffeeShop.UI.MenuItemUI">
+    <Position X="7.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UI\MenuItemUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
