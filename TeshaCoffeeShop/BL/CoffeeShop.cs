@@ -8,12 +8,24 @@ namespace TeshaCoffeeShop.BL
 {
     class CoffeeShop
     {
-        public string name;
-        public List<MenuItem> menuItemsList = new List<MenuItem>();
-        public List<string> ordersList = new List<string>();
+        private string name;
+        private List<MenuItem> menuItemsList = new List<MenuItem>();
+        private List<string> ordersList = new List<string>();
         public CoffeeShop (string name)
         {
             this.name = name;
+        }
+        public string getName ()
+        {
+            return name;
+        }
+        public List<MenuItem> getmenuItemsList ()
+        {
+            return menuItemsList;
+        }
+        public List<String> getordersList ()
+        {
+            return ordersList;
         }
         public void addMenuItem (MenuItem newMenuItem)
         {
@@ -23,7 +35,7 @@ namespace TeshaCoffeeShop.BL
         {
             foreach (MenuItem item in menuItemsList)
             {
-                if (item.name == name)
+                if (item.getName() == name)
                 {
                     ordersList.Add(name);
                     return true;
@@ -55,9 +67,10 @@ namespace TeshaCoffeeShop.BL
             {
                 foreach (MenuItem item in menuItemsList)
                 {
-                    if (item.name == name)
+                    if (item.getName() == name)
                     {
-                        price += item.price;
+                        int p = item.getPrice();
+                        price += p;
                     }
                 }
             }
@@ -68,24 +81,24 @@ namespace TeshaCoffeeShop.BL
             MenuItem item = menuItemsList[0];
             for (int i = 1 ; i < menuItemsList.Count ; i++)
             {
-                if (menuItemsList[i].price < item.price)
+                if (menuItemsList[i].getPrice() < item.getPrice())
                 {
                     item = menuItemsList[i];
                 }
             }
-            string cheapest = item.name;
+            string cheapest = item.getName();
             return cheapest;
         }
         public List<String> drinksOnly ()
         {
-            List<MenuItem> drinksList = menuItemsList.Where(item => item.type == "drink").ToList();
-            List<string> drinks = drinksList.Select(items => items.name).ToList();
+            List<MenuItem> drinksList = menuItemsList.Where(item => item.getType() == "drink").ToList();
+            List<string> drinks = drinksList.Select(items => items.getName()).ToList();
             return drinks;
         }
         public List<String> foodOnly ()
         {
-            List<MenuItem> foodList = menuItemsList.Where(item => item.type == "food").ToList();
-            List<string> food = foodList.Select(items => items.name).ToList();
+            List<MenuItem> foodList = menuItemsList.Where(item => item.getType() == "food").ToList();
+            List<string> food = foodList.Select(items => items.getName()).ToList();
             return food;
         }
         public static void addSomeItems (CoffeeShop myCoffeeShop)

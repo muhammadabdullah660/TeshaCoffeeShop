@@ -15,70 +15,50 @@ namespace TeshaCoffeeShop
             int op = 0;
             while (op < 9)
             {
-                op = mainMenu();
-                clearScreen();
+                op = MainMenuUI.mainMenu();
+                MainMenuUI.clearScreen();
                 if (op == 1)
                 {
                     CoffeeShopUI.addMenuItem();
-                    clearScreen();
+                    MainMenuUI.clearScreen();
                 }
                 else if (op == 2)
                 {
                     CoffeeShopUI.viewCheapest();
-                    clearScreen();
+                    MainMenuUI.clearScreen();
                 }
                 else if (op == 3)
                 {
                     CoffeeShopUI.viewDrinksMenu();
-                    clearScreen();
+                    MainMenuUI.clearScreen();
                 }
                 else if (op == 4)
                 {
                     CoffeeShopUI.viewFoodMenu();
-                    clearScreen();
+                    MainMenuUI.clearScreen();
                 }
                 else if (op == 5)
                 {
                     CoffeeShopUI.placeOrder();
-                    clearScreen();
+                    MainMenuUI.clearScreen();
                 }
                 else if (op == 6)
                 {
                     CoffeeShopUI.orderFulfill();
-                    clearScreen();
+                    MainMenuUI.clearScreen();
                 }
                 else if (op == 7)
                 {
                     CoffeeShopUI.viewOrders();
-                    clearScreen();
+                    MainMenuUI.clearScreen();
                 }
                 else if (op == 8)
                 {
                     CoffeeShopUI.viewAmount();
-                    clearScreen();
+                    MainMenuUI.clearScreen();
                 }
             }
         }
-        static int mainMenu ()
-        {
-            int op = 0;
-            Console.WriteLine("1. Add a Menu item");
-            Console.WriteLine("2. View the Cheapest Item in the menu");
-            Console.WriteLine("3. View the Drink's Menu");
-            Console.WriteLine("4. View the Food's Menu");
-            Console.WriteLine("5. Add Order");
-            Console.WriteLine("6. Fulfill Order");
-            Console.WriteLine("7. View the Orders' List");
-            Console.WriteLine("8. Total Payable Amount");
-            Console.WriteLine("9. Exit");
-            op = int.Parse(Console.ReadLine());
-            return op;
-        }
-        static void clearScreen ()
-        {
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
-            Console.Clear();
-        }
+
     }
 }
