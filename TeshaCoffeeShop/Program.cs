@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using TeshaCoffeeShop.BL;
 using TeshaCoffeeShop.UI;
+using TeshaCoffeeShop.DL;
 namespace TeshaCoffeeShop
 {
     class Program
     {
         static void Main ()
         {
-            CoffeeShopUI.addItems();
+            CoffeeShopUI.loadItemsFromFile();
+            CoffeeShopUI.loadShopFromFile();
             int op = 0;
             while (op < 9)
             {
@@ -58,6 +60,7 @@ namespace TeshaCoffeeShop
                     MainMenuUI.clearScreen();
                 }
             }
+            CoffeeShopUI.storeShopIntoFile();
         }
 
     }

@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="BL\CoffeeShop.cs" />
     <Compile Include="BL\MenuItem.cs" />
+    <Compile Include="DL\CoffeeShopDL.cs" />
+    <Compile Include="DL\MenuItemDL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\CoffeeShopUI.cs" />

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TeshaCoffeeShop.BL;
+using TeshaCoffeeShop.DL;
 namespace TeshaCoffeeShop.UI
 {
     class CoffeeShopUI
@@ -11,13 +12,23 @@ namespace TeshaCoffeeShop.UI
         public static CoffeeShop myCoffeeShop = new CoffeeShop("Alpha");
 
 
-        public static void addItems ()
+        public static void loadItemsFromFile ()
         {
-            CoffeeShop.addSomeItems(myCoffeeShop);
+            MenuItemDL.loadFromFile("MenuItem.txt" , myCoffeeShop);
+        }
+        public static void loadShopFromFile ()
+        {
+            CoffeeShopDL.loadFromFile("CoffeeShop.txt" , myCoffeeShop);
+        }
+        public static void storeShopIntoFile ()
+        {
+            CoffeeShopDL.storeIntoFile("CoffeeShop.txt" , myCoffeeShop);
         }
         public static void addMenuItem ()
         {
-            myCoffeeShop.addMenuItem(MenuItemUI.takeInput());
+            MenuItem newMenuItem = MenuItemUI.takeInput();
+            myCoffeeShop.addMenuItem(newMenuItem);
+            MenuItemDL.storeIntoFile("MenuItem.txt" , newMenuItem);
 
         }
         public static void viewCheapest ()

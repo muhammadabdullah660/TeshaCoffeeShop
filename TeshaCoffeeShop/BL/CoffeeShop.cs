@@ -27,6 +27,18 @@ namespace TeshaCoffeeShop.BL
         {
             return ordersList;
         }
+        public void setName (string name)
+        {
+            this.name = name;
+        }
+        public void setMenuItemsList (List<MenuItem> menuItemsList)
+        {
+            this.menuItemsList = menuItemsList;
+        }
+        public void setOrdersList (List<String> ordersList)
+        {
+            this.ordersList = ordersList;
+        }
         public void addMenuItem (MenuItem newMenuItem)
         {
             menuItemsList.Add(newMenuItem);
@@ -42,6 +54,17 @@ namespace TeshaCoffeeShop.BL
                 }
             }
             return false;
+        }
+        public MenuItem isMenuItemExist (string name)
+        {
+            foreach (MenuItem item in menuItemsList)
+            {
+                if (item.getName() == name)
+                {
+                    return item;
+                }
+            }
+            return null;
         }
         public string fulfillOrder ()
         {
@@ -101,23 +124,7 @@ namespace TeshaCoffeeShop.BL
             List<string> food = foodList.Select(items => items.getName()).ToList();
             return food;
         }
-        public static void addSomeItems (CoffeeShop myCoffeeShop)
-        {
-            myCoffeeShop.addMenuItem(new MenuItem("orange juice" , "drink" , 60));
-            myCoffeeShop.addMenuItem(new MenuItem("lemonade" , "drink" , 50));
-            myCoffeeShop.addMenuItem(new MenuItem("cranberry juice" , "drink" , 100));
-            myCoffeeShop.addMenuItem(new MenuItem("pineapple juice" , "drink" , 100));
-            myCoffeeShop.addMenuItem(new MenuItem("lemon iced tea" , "drink" , 120));
-            myCoffeeShop.addMenuItem(new MenuItem("vanilla chai latte" , "drink" , 150));
-            myCoffeeShop.addMenuItem(new MenuItem("hot chocolate" , "drink" , 140));
-            myCoffeeShop.addMenuItem(new MenuItem("iced coffee" , "drink" , 140));
-            myCoffeeShop.addMenuItem(new MenuItem("tuna sandwich" , "food" , 300));
-            myCoffeeShop.addMenuItem(new MenuItem("ham and cheese sandwich" , "food" , 300));
-            myCoffeeShop.addMenuItem(new MenuItem("egg sandwich" , "food" , 200));
-            myCoffeeShop.addMenuItem(new MenuItem("steak" , "food" , 900));
-            myCoffeeShop.addMenuItem(new MenuItem("hamburger" , "food" , 600));
-            myCoffeeShop.addMenuItem(new MenuItem("cinnamon roll" , "food" , 150));
 
-        }
+
     }
 }
